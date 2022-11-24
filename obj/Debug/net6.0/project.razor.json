@@ -16333,6 +16333,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\paula\\OneDrive\\Documentos\\LG3\\LP3-Proj-4bi\\Views\\MovieTheater\\Update.cshtml",
+      "TargetPath": "Views\\MovieTheater\\Update.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\paula\\OneDrive\\Documentos\\LG3\\LP3-Proj-4bi\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"

@@ -1,0 +1,29 @@
+@model LP3_ProjetoFinal.Models.MovieTheater;
+
+@{
+    ViewData["Title"] = $"Editar Sala {Model.Id}";
+}
+<h1>@ViewData["Title"]</h1>
+
+<form asp-controller="MovieTheater" asp-action="Update" method="post">
+    <p>
+        <input type="hidden" asp-for="Id" value="@Model.Id">
+    </p>
+
+    <p>
+        <label for="number">Número: </label>
+        <input type="number" asp-for="Number" value="@Model.Number">
+    </p>
+
+    <p>
+        <label for="numberSeats">Número de assentos: </label>
+        <input type="number" asp-for="NumberSeats" value="@Model.NumberSeats">
+    </p>
+
+    <p>
+        <label for="hall">Corredor: </label>
+        <input type="text" asp-for="Hall" value="@Model.Hall">
+    </p>
+
+    <button type="submit">Salvar</button>
+</form>

@@ -38,5 +38,19 @@ public class MovieTheaterController : Controller
         _context.SaveChanges();
         return RedirectToAction(nameof(Index));
     }
+
+    public IActionResult Update(int id)
+    {
+        MovieTheater theater = _context.MovieTheaters.Find(id);
+        return View(theater);
+    }
+
+    [HttpPost]
+    public IActionResult Update([FromForm] MovieTheater theater)
+    {
+        _context.MovieTheaters.Update(theater);
+        _context.SaveChanges();
+        return RedirectToAction(nameof(Index));
+    }
     
 }
