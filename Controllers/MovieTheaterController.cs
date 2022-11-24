@@ -24,5 +24,19 @@ public class MovieTheaterController : Controller
 
         return View(theater);
     }
+
+    public IActionResult Delete(int id)
+    {
+        MovieTheater theater = _context.MovieTheaters.Find(id);
+
+        if(theater == null)
+        {
+            return NotFound();
+        }
+
+        _context.MovieTheaters.Remove(theater);
+        _context.SaveChanges();
+        return RedirectToAction(nameof(Index));
+    }
     
 }
