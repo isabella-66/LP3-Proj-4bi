@@ -1,7 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using LP3_ProjetoFinal.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<ProjContext>(
+    options => options.UseMySQL("server=localhost;database=proj4bi;user=proj4bi;password=Proj4bi@!#$2")
+);
 
 var app = builder.Build();
 
