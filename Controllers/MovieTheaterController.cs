@@ -5,7 +5,6 @@ namespace LP3_ProjetoFinal.Controllers;
 
 public class MovieTheaterController : Controller
 {
-    // underline pode ser usada se atributo é private
     private readonly ProjContext _context;
 
     public MovieTheaterController(ProjContext context) 
@@ -14,5 +13,16 @@ public class MovieTheaterController : Controller
     }
 
     public IActionResult Index() => View(_context.MovieTheaters);
+
+    public IActionResult Show(int id) {
+        MovieTheater theater = _context.MovieTheaters.Find(id);
+
+        if(theater == null)
+        {
+            return NotFound();
+        }
+
+        return View(theater);
+    }
     
 }

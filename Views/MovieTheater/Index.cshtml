@@ -21,13 +21,16 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach(var theaters in Model)
+            @foreach(var theater in Model)
             {
                 <tr>
-                    <td>@theaters.Id</td>
-                    <td>@theaters.Number</td>
-                    <td>@theaters.NumberSeats</td>
-                    <td>@theaters.Hall</td>
+                    <td>@theater.Id</td>
+                    <td>@theater.Number</td>
+                    <td>@theater.NumberSeats</td>
+                    <td>@theater.Hall</td>
+                    <td>
+                        <a class="btn btn-primary btn-sm" href="/MovieTheater/Show/@theater.Id">Ver</a>
+                    </td>
                 </tr>
             }
         </tbody>
