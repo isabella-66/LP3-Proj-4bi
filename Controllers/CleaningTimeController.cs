@@ -25,6 +25,20 @@ public class CleaningTimeController : Controller
         return View(cleaningTime);
     }
 
+    public IActionResult Create()
+    {
+        return View();
+    }  
+
+    [HttpPost]
+    public IActionResult Create([FromForm] CleaningTime cleaningTime)
+    {
+        _context.CleaningTimes.Add(cleaningTime);
+        _context.SaveChanges();
+
+        return RedirectToAction(nameof(Index));
+    }
+
     public IActionResult Delete(int id)
     {
         CleaningTime cleaningTime = _context.CleaningTimes.Find(id);

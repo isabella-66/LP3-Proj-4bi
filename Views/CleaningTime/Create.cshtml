@@ -1,0 +1,30 @@
+@model LP3_ProjetoFinal.Models.CleaningTime;
+
+@{
+    ViewData["Title"] = $"Criar Novo Horário de Limpeza";
+}
+<h1>@ViewData["Title"]</h1>
+
+<form controller="CleaningTime" action="Create" method="post">
+    <p>
+        <label for="id">Id: </label>
+        <input type="number" name="id" id="id">
+    </p>
+
+    <p>
+        <label for="starttime">Horário de início: </label>
+        <input type="time" name="starttime" id="starttime">
+    </p>
+
+    <p>
+        <label for="endtime">Horário de término: </label>
+        <input type="time" name="endtime" id="endtime">
+    </p>
+
+    <p>
+        <label for="employee">Funcionário: </label>
+        <input type="text" name="employee" id="employee">
+    </p>
+
+    <button type="submit">Salvar</button>
+</form>
