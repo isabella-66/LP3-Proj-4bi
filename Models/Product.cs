@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace LP3_ProjetoFinal.Models;
 
 public class Product
@@ -7,6 +9,9 @@ public class Product
     public float Price { get; set; }
     public string Description { get; set; }
     public int Quantity { get; set; }
+    [ForeignKey("Store")]
+    public int StoreId { get; set; }
+    public Store Store { get; set; }
 
     public Product() { }
 

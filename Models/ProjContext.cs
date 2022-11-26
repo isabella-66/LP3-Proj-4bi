@@ -9,6 +9,8 @@ public class ProjContext : DbContext
 
     public DbSet<CleaningTime> CleaningTimes { get; set; }
 
+    public DbSet<Store> Stores { get; set; }
+
     public DbSet<Product> Products { get; set; }
 
     public ProjContext(DbContextOptions<ProjContext> options) : base(options)
