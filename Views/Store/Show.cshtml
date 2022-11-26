@@ -1,6 +1,5 @@
 @model LP3_ProjetoFinal.Models.Store;
 
-
 @{
     ViewData["Title"] = $"Loja { Model.Name }";
 }
@@ -17,5 +16,12 @@
 <p>
     <b>Descrição: </b> @Model.Description
 </p>
+
+<p>Produtos:</p>
+
+@foreach(var product in ViewBag.products)
+{
+      <p>@product.Name</p>
+}
 
  <a class="btn btn-danger btn-sm" href="/Store/Delete/@Model.Id">Remover</a>

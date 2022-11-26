@@ -16,7 +16,7 @@ public class StoreController : Controller
 
     public IActionResult Show(int id) {
     Store store = _context.Stores.Find(id);
-    // var products = _context.Products.Where(x => x.StoreId == id).ToList();
+    ViewBag.products = _context.Products.Where(x => x.StoreId == id).ToList();
 
         if(store == null)
         {
@@ -43,7 +43,7 @@ public class StoreController : Controller
     }
     
 
-       public IActionResult Create()
+    public IActionResult Create()
     {
         return View();
     }  
