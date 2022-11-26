@@ -1,0 +1,19 @@
+@model LP3_ProjetoFinal.Models.CleaningTime
+
+@{
+    ViewData["Title"] = $"Horário - Id: {Model.Id}";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <b>Id: </b> @Model.Id
+</p>
+<p>
+    <b>Horário de início: </b> @Model.StartTime
+</p>
+<p>
+    <b>Horário de término: </b> @Model.EndTime
+</p>
+<p>
+    <b>Funcionário: </b> @Model.Employee
+</p>
