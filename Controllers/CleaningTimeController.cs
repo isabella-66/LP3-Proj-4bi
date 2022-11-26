@@ -13,4 +13,18 @@ public class CleaningTimeController : Controller
     }
 
     public IActionResult Index() => View(_context.CleaningTimes);
+
+    public IActionResult Update(int id)
+    {
+        CleaningTime cleaningTime = _context.CleaningTimes.Find(id);
+        return View(cleaningTime);
+    }
+
+    [HttpPost]
+    public IActionResult Update([FromForm] CleaningTime cleaningTime)
+    {
+        _context.CleaningTimes.Update(cleaningTime);
+        _context.SaveChanges();
+        return RedirectToAction(nameof(Index));
+    }
 }

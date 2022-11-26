@@ -1,0 +1,29 @@
+@model LP3_ProjetoFinal.Models.CleaningTime;
+
+@{
+    ViewData["Title"] = $"Editar Horário de Limpeza - Id: {Model.Id}";
+}
+<h1>@ViewData["Title"]</h1>
+
+<form asp-controller="CleaningTime" asp-action="Update" method="post">
+    <p>
+        <input type="hidden" asp-for="Id" value="@Model.Id">
+    </p>
+
+    <p>
+        <label for="starttime">Horário de início: </label>
+        <input type="time" asp-for="StartTime" value="@Model.StartTime">
+    </p>
+
+    <p>
+        <label for="endtime">Horário de término: </label>
+        <input type="time" asp-for="EndTime" value="@Model.EndTime">
+    </p>
+
+    <p>
+        <label for="employee">Funcionário: </label>
+        <input type="text" asp-for="Employee" value="@Model.Employee">
+    </p>
+
+    <button type="submit">Salvar</button>
+</form>
