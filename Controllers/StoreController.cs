@@ -13,5 +13,16 @@ public class StoreController : Controller
     }
 
     public IActionResult Index() => View(_context.Stores);
+
+    public IActionResult Show(int id) {
+    Store store = _context.Stores.Find(id);
+
+        if(store == null)
+        {
+            return NotFound();
+        }
+
+        return View(store);
+    }
     
 }

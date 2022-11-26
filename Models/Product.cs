@@ -22,6 +22,7 @@ public class Product
         Price = price;
         Description = description;
         Quantity = quantity;
+    
     }
     
 }

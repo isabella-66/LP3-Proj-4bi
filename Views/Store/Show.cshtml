@@ -1,0 +1,18 @@
+@model LP3_ProjetoFinal.Models.Store
+
+@{
+    ViewData["Title"] = $"Loja { Model.Name }";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <b>Id: </b> @Model.Id
+</p>
+
+<p>
+    <b>Número: </b> @Model.Name
+</p>
+
+<p>
+    <b>Descrição: </b> @Model.Description
+</p>
