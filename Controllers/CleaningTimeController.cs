@@ -14,6 +14,20 @@ public class CleaningTimeController : Controller
 
     public IActionResult Index() => View(_context.CleaningTimes);
 
+    public IActionResult Delete(int id)
+    {
+        CleaningTime cleaningTime = _context.CleaningTimes.Find(id);
+
+        if(cleaningTime == null)
+        {
+            return NotFound();
+        }
+
+        _context.CleaningTimes.Remove(cleaningTime);
+        _context.SaveChanges();
+        return RedirectToAction(nameof(Index));
+    }
+
     public IActionResult Update(int id)
     {
         CleaningTime cleaningTime = _context.CleaningTimes.Find(id);
