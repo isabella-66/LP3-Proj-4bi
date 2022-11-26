@@ -52,5 +52,18 @@ public class MovieTheaterController : Controller
         _context.SaveChanges();
         return RedirectToAction(nameof(Index));
     }
-    
+
+    public IActionResult Create()
+    {
+        return View();
+    }  
+
+    [HttpPost]
+    public IActionResult Create([FromForm] MovieTheater theater)
+    {
+        _context.MovieTheaters.Add(theater);
+        _context.SaveChanges();
+
+        return RedirectToAction(nameof(Index));
+    }
 }
