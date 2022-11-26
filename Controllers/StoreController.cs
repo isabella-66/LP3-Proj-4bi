@@ -42,4 +42,29 @@ public class StoreController : Controller
         return RedirectToAction(nameof(Index));
     }
     
+
+       public IActionResult Create()
+    {
+        return View();
+    }  
+
+    [HttpPost]
+    public IActionResult Create([FromForm] Store store)
+    {
+
+        if (!ModelState.IsValid)
+        {
+            return View(store);
+        }
+
+        if (_context.Stores.Find(store.Id) != null) 
+        {
+            throw new Exception("Já existe uma loja com esse Id");
+        }
+
+        _context.Stores.Add(store);
+        _context.SaveChanges();
+
+        return RedirectToAction(nameof(Index));
+    }
 }
