@@ -1,0 +1,43 @@
+@model IEnumerable<LP3_ProjetoFinal.Models.Store>
+
+@{
+    ViewData["Title"] = "Lojas";
+}
+<h1>@ViewData["Title"]</h1>
+
+@if(Model.Count() == 0)
+{
+    <p>Nenhuma loja cadastrada</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var store in Model)
+            {
+                <tr>
+                    <td>@store.Id</td>
+                    <td>@store.Name</td>
+                    <td>@store.Description</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Store/Show/@store.Id">Ver</a>
+                     <a class="btn btn-warning btn-sm" asp-controller="Store" asp-action="Update"
+                    asp-route-id="@store.Id">Atualizar</a>
+                    <a class="btn btn-danger btn-sm" href="/Store/Delete/
+                    @store.Id">Remover</a>
+                </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<a class="btn btn-primary btn-sm" asp-controller="Store" asp-action="Create">Criar loja</a>

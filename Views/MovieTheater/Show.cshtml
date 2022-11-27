@@ -1,0 +1,19 @@
+@model LP3_ProjetoFinal.Models.MovieTheater
+
+@{
+    ViewData["Title"] = $"Sala {Model.Number}";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <b>Id: </b> @Model.Id
+</p>
+<p>
+    <b>Número: </b> @Model.Number
+</p>
+<p>
+    <b>Número de assentos: </b> @Model.NumberSeats
+</p>
+<p>
+    <b>Corredor: </b> @Model.Hall
+</p>

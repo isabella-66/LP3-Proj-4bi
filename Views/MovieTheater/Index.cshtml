@@ -1,0 +1,42 @@
+@model IEnumerable<LP3_ProjetoFinal.Models.MovieTheater>
+
+@{
+    ViewData["Title"] = "Salas de cinema";
+}
+<h1>@ViewData["Title"]</h1>
+
+@if(Model.Count() == 0)
+{
+    <p>Nenhuma sala cadastrada</p>
+}
+else
+{
+    <a class="btn btn-primary btn-sm" href="/MovieTheater/Create">Nova sala</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Número</th>
+                <th>Número Assentos</th>
+                <th>Corredor</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var theater in Model)
+            {
+                <tr>
+                    <td>@theater.Id</td>
+                    <td>@theater.Number</td>
+                    <td>@theater.NumberSeats</td>
+                    <td>@theater.Hall</td>
+                    <td>
+                        <a class="btn btn-primary btn-sm" href="/MovieTheater/Show/@theater.Id">Ver</a>
+                        <a class="btn btn-primary btn-sm" href="/MovieTheater/Update/@theater.Id">Editar</a>
+                        <a class="btn btn-primary btn-sm" href="/MovieTheater/Delete/@theater.Id">Remover</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

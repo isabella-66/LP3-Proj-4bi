@@ -1,0 +1,25 @@
+@model LP3_ProjetoFinal.Models.Store;
+
+@{
+    ViewData["Title"] = $"Criar loja";
+}
+<h1>@ViewData["Title"]</h1>
+
+<form id="form" action="Create" method="post">
+    <p>
+        <label for="Id">Id: </label>
+        <input type="number" name="Id">
+    </p>
+
+    <p>
+        <label for="Name">Nome: </label>
+        <input type="text" name="Name">
+    </p>
+
+    <p>
+        <label for="Description">Descrição: </label>
+        <input type="text" name="Description">
+    </p>
+
+    <button type="submit">Salvar</button>
+</form>
