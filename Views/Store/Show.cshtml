@@ -21,11 +21,43 @@
 
 <a class="btn btn-danger btn-sm" href="/Store/Delete/@Model.Id">Remover</a>
 
-<p>Produtos:</p>
-
-@foreach(var product in ViewBag.products)
+@if(!(ViewBag.products.Count > 0))
 {
-      <p>@product.Name</p>
+    <p class="mt-2">Essa loja não possui produtos</p>
+}
+else
+{
+    <h2>Produtos</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Preço</th>
+                <th>Quantidade Disponível</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var product in ViewBag.products)
+            {
+                <tr>
+                    <td>@product.Id</td>
+                    <td>@product.Name</td>
+                    <td>@product.Price</td>
+                    <td>@product.Quantity</td>
+                <td>
+                    @* <a class="btn btn-primary btn-sm" href="/Store/Show/@store.Id">Ver</a>
+                     <a class="btn btn-warning btn-sm" asp-controller="Store" asp-action="Update"
+                    asp-route-id="@store.Id">Atualizar</a>
+                    *@
+                    <a class="btn btn-danger btn-sm" href="/Product/Delete/
+                    @product.Id">Remover</a> 
+                </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 }
 
  

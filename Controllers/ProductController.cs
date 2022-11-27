@@ -14,4 +14,18 @@ public class ProductController : Controller
 
     public IActionResult Index() => View(_context.Products);
     
+    public IActionResult Delete(int id)
+    {
+        Product product = _context.Products.Find(id);
+
+        if(product == null)
+        {
+            return NotFound();
+        }
+
+        _context.Products.Remove(product);
+        _context.SaveChanges();
+        return RedirectToAction("Index"); // mudar
+    }
+
 }
