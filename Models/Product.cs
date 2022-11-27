@@ -15,14 +15,14 @@ public class Product
 
     public Product() { }
 
-    public Product(int id, string name, float price, string description, int quantity)
+    public Product(int id, string name, float price, string description, int quantity, int storeId)
     {
         Id = id;
         Name = name;
         Price = price;
         Description = description;
         Quantity = quantity;
-    
+        StoreId = storeId;
     }
     
 }

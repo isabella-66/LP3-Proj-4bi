@@ -28,4 +28,30 @@ public class ProductController : Controller
         return RedirectToAction("Index"); // mudar
     }
 
+    public IActionResult Create(Store store)
+    {
+        ViewBag.lojaId = store.Id;
+        return View();
+    }  
+
+    [HttpPost]
+    public IActionResult Create([FromForm] Product product)
+    {
+
+        if (!ModelState.IsValid)
+        {
+            return View(product);
+        }
+
+        if (_context.Products.Find(product.Id) != null) 
+        {
+            throw new Exception("Já existe um produto com esse Id");
+        }
+
+        _context.Products.Add(product);
+        _context.SaveChanges();
+
+        return RedirectToAction(nameof(Index));
+    }
+
 }
