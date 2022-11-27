@@ -1,0 +1,24 @@
+@model LP3_ProjetoFinal.Models.Store;
+
+@{
+    ViewData["Title"] = $"Editar Loja { Model.Name }";
+}
+<h1>@ViewData["Title"]</h1>
+
+<form asp-controller="Store" asp-action="Update" method="post">
+    <p>
+        <input type="hidden" asp-for="Id" value="@Model.Id">
+    </p>
+
+    <p>
+        <label for="Name">Nome: </label>
+        <input type="text" asp-for="Name" value="@Model.Name">
+    </p>
+
+    <p>
+        <label for="Description">Descrição: </label>
+        <input type="text" asp-for="Description" value="@Model.Description">
+    </p>
+
+    <button type="submit">Salvar</button>
+</form>

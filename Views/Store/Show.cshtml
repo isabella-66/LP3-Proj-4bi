@@ -1,7 +1,7 @@
 @model LP3_ProjetoFinal.Models.Store;
 
 @{
-    ViewData["Title"] = $"Loja { Model.Name }";
+    ViewData["Title"] = $"Loja: { Model.Name }";
 }
 <h1>@ViewData["Title"]</h1>
 
@@ -17,6 +17,10 @@
     <b>Descrição: </b> @Model.Description
 </p>
 
+<a class="btn btn-warning btn-sm" asp-controller="Store" asp-action="Update" asp-route-id="@Model.Id">Atualizar</a>
+
+<a class="btn btn-danger btn-sm" href="/Store/Delete/@Model.Id">Remover</a>
+
 <p>Produtos:</p>
 
 @foreach(var product in ViewBag.products)
@@ -24,4 +28,4 @@
       <p>@product.Name</p>
 }
 
- <a class="btn btn-danger btn-sm" href="/Store/Delete/@Model.Id">Remover</a>
+ 

@@ -67,4 +67,35 @@ public class StoreController : Controller
 
         return RedirectToAction(nameof(Index));
     }
+
+    public IActionResult Update(int id)
+    {
+        Store store = _context.Stores.Find(id);
+        return View(store);
+    }
+
+
+    [HttpPost]
+    public IActionResult Update([FromForm] Store store)
+    {
+        if (!ModelState.IsValid)
+        {
+            return View(store);
+        }
+
+        Store storeFound = _context.Stores.Find(store.Id);
+
+        if (storeFound == null)
+        {
+            return NotFound();
+        }
+
+        storeFound.Id = store.Id;
+        storeFound.Name = store.Name;
+        storeFound.Description = store.Description;
+
+        _context.Stores.Update(storeFound);
+        _context.SaveChanges();
+        return RedirectToAction("Index");
+    }
 }
