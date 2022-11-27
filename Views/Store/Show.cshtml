@@ -48,9 +48,9 @@ else
                     <td>@product.Quantity</td>
                 <td>
                     @* <a class="btn btn-primary btn-sm" href="/Store/Show/@store.Id">Ver</a>
-                     <a class="btn btn-warning btn-sm" asp-controller="Store" asp-action="Update"
-                    asp-route-id="@store.Id">Atualizar</a>
                     *@
+                     <a class="btn btn-warning btn-sm" asp-controller="Product" asp-action="Update"
+                    asp-route-id="@product.Id">Atualizar</a>
                     <a class="btn btn-danger btn-sm" href="/Product/Delete/
                     @product.Id">Remover</a> 
                 </td>
@@ -60,6 +60,6 @@ else
     </table>
 }
 
- <a class="btn btn-danger btn-sm" href="/Product/Create/@Model.Id">Adicionar produto</a> 
+ <a class="btn btn-primary btn-sm" href="/Product/Create/@Model.Id">Adicionar produto</a> 
 
  

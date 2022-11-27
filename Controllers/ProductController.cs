@@ -54,4 +54,37 @@ public class ProductController : Controller
         return RedirectToAction(nameof(Index));
     }
 
+    public IActionResult Update(int id)
+    {
+        Product product = _context.Products.Find(id);
+        return View(product);
+    }
+
+    [HttpPost]
+    public IActionResult Update([FromForm] Product product)
+    {
+        if (!ModelState.IsValid)
+        {
+            return View(product);
+        }
+
+        Product productFound = _context.Products.Find(product.Id);
+
+        if (productFound == null)
+        {
+            return NotFound();
+        }
+
+        productFound.Id = product.Id;
+        productFound.Name = product.Name;
+        productFound.Price = product.Price;
+        productFound.Description = product.Description;
+        productFound.Quantity = product.Quantity;
+        productFound.StoreId = product.StoreId;
+
+        _context.Products.Update(productFound);
+        _context.SaveChanges();
+        return RedirectToAction("Index");
+    }
+
 }
