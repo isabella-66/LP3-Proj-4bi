@@ -1,0 +1,33 @@
+@model LP3_ProjetoFinal.Models.Product;
+
+@{
+    ViewData["Title"] = $"Produto: { Model.Name }";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <b>Id: </b> @Model.Id
+</p>
+
+<p>
+    <b>Nome: </b> @Model.Name
+</p>
+
+<p>
+    <b>Preço: </b> @Model.Price
+</p>
+
+<p>
+    <b>Descrição: </b> @Model.Description
+</p>
+
+<p>
+    <b>Preço: </b> @Model.Quantity
+</p>
+
+<a class="btn btn-warning btn-sm" asp-controller="Product" asp-action="Update" asp-route-id="@Model.Id">Atualizar</a>
+
+<a class="btn btn-danger btn-sm" href="/Product/Delete/@Model.Id">Remover</a>
+
+
+ 

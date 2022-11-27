@@ -87,4 +87,15 @@ public class ProductController : Controller
         return RedirectToAction("Index");
     }
 
+
+    public IActionResult Show(int id) {
+    Product product = _context.Products.Find(id);
+
+        if(product == null)
+        {
+            return NotFound();
+        }
+
+        return View(product);
+    }
 }
