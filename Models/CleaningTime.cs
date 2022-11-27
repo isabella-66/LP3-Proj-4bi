@@ -16,5 +16,4 @@ public class CleaningTime
         EndTime = endTime;
         Employee = employee;
     }
-
 }

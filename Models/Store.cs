@@ -13,6 +13,5 @@ public class Store
         Id = id;
         Name = name;
         Description = description;
-    }
-    
+    }    
 }

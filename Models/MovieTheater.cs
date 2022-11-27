@@ -16,5 +16,4 @@ public class MovieTheater
         NumberSeats = numberSeats;
         Hall = hall;
     }
-    
 }
