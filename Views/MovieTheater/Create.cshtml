@@ -7,23 +7,27 @@
 
 <form id="form" action="Create" method="post">
     <p>
-        <label for="number">Id: </label>
-        <input type="number" id="id" name="id">
+        <label asp-for="Id">Id: </label>
+        <input type="number" asp-for="Id">
+        <span asp-validation-for="Id" class="text-danger"></span>
     </p>
 
     <p>
-        <label for="number">Número: </label>
-        <input type="number"  id="number" name="number">
+        <label asp-for="Number">Número: </label>
+        <input type="number"  asp-for="Number">
+        <span asp-validation-for="Number" class="text-danger"></span>
     </p>
 
     <p>
-        <label for="numberSeats">Número de assentos: </label>
-        <input type="number" id="numberSeats" name="numberSeats">
+        <label asp-for="NumberSeats">Número de assentos: </label>
+        <input type="number" asp-for="NumberSeats">
+        <span asp-validation-for="NumberSeats" class="text-danger"></span>
     </p>
 
     <p>
-        <label for="hall">Corredor: </label>
-        <input type="text" id="hall" name="hall">
+        <label asp-for="Hall">Corredor: </label>
+        <input type="text" asp-for="Hall">
+        <span asp-validation-for="Hall" class="text-danger"></span>
     </p>
 
     <button type="submit">Salvar</button>

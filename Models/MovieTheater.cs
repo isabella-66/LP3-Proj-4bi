@@ -1,10 +1,18 @@
+using System.ComponentModel.DataAnnotations;
 namespace LP3_ProjetoFinal.Models;
 
 public class MovieTheater
 {
+    [Required]
     public int Id { get; set; }
+
+    [Required]
     public int Number { get; set; }
+
+    [Required]
     public int NumberSeats { get; set; }
+
+    [Required]
     public string Hall { get; set; }
 
     public MovieTheater() { }

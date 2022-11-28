@@ -11,18 +11,21 @@
     </p>
 
     <p>
-        <label for="number">Número: </label>
+        <label asp-for="Number">Número: </label>
         <input type="number" asp-for="Number" value="@Model.Number">
+        <span asp-validation-for="Number" class="text-danger"></span>
     </p>
 
     <p>
-        <label for="numberSeats">Número de assentos: </label>
+        <label asp-for="NumberSeats">Número de assentos: </label>
         <input type="number" asp-for="NumberSeats" value="@Model.NumberSeats">
+        <span asp-validation-for="NumberSeats" class="text-danger"></span>
     </p>
 
     <p>
-        <label for="hall">Corredor: </label>
+        <label asp-for="Hall">Corredor: </label>
         <input type="text" asp-for="Hall" value="@Model.Hall">
+        <span asp-validation-for="Hall" class="text-danger"></span>
     </p>
 
     <button type="submit">Salvar</button>

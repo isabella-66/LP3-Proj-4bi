@@ -48,6 +48,11 @@ public class MovieTheaterController : Controller
     [HttpPost]
     public IActionResult Update([FromForm] MovieTheater theater)
     {
+        if (!ModelState.IsValid)
+        {
+            return View(theater);
+        }
+        
         _context.MovieTheaters.Update(theater);
         _context.SaveChanges();
         return RedirectToAction(nameof(Index));
@@ -61,6 +66,11 @@ public class MovieTheaterController : Controller
     [HttpPost]
     public IActionResult Create([FromForm] MovieTheater theater)
     {
+        if (!ModelState.IsValid)
+        {
+            return View(theater);
+        }
+
         _context.MovieTheaters.Add(theater);
         _context.SaveChanges();
 
