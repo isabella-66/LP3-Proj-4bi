@@ -1,0 +1,48 @@
+@model IEnumerable<LP3_ProjetoFinal.Models.Employee>
+
+@{
+    ViewData["Title"] = "Funcionários";
+}
+<h1>@ViewData["Title"]</h1>
+
+@if(Model.Count() == 0)
+{
+    <p>Nenhumo(a) funcionário(a) cadastrado(a).</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>Data de nascimento</th>
+                <th>Função</th>
+                <th>Horário de entrada</th>
+                <th>Horário de saída</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var employee in Model)
+            {
+                <tr>
+                    <td>@employee.Id</td>
+                    <td>@employee.Name</td>
+                    <td>@employee.Lastname</td>
+                    <td>@employee.Birth</td>
+                    <td>@employee.Occupation</td>
+                    <td>@employee.EntryTime</td>
+                    <td>@employee.DepartureTime</td>
+                    <td>
+                        <a class="btn btn-primary btn-sm" href="#">Ver</a>
+                        <a class="btn btn-warning btn-sm">Atualizar</a>
+                        <a class="btn btn-danger btn-sm" href="#">Remover</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<a class="btn btn-primary btn-sm">Criar loja</a>

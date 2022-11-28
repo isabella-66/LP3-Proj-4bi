@@ -16298,8 +16298,18 @@
   "RootNamespace": "LP3-ProjetoFinal",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\Administrador\\Documents\\Ensino Médio - 3° ano\\LP3 3º\\Avaliações\\LP3-ProjetoFinal\\Views\\Product\\Update.cshtml",
+      "TargetPath": "Views\\Product\\Update.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Administrador\\Documents\\Ensino Médio - 3° ano\\LP3 3º\\Avaliações\\LP3-ProjetoFinal\\Views\\Product\\Index.cshtml",
       "TargetPath": "Views\\Product\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Administrador\\Documents\\Ensino Médio - 3° ano\\LP3 3º\\Avaliações\\LP3-ProjetoFinal\\Views\\Employee\\Index.cshtml",
+      "TargetPath": "Views\\Employee\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16348,6 +16358,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Administrador\\Documents\\Ensino Médio - 3° ano\\LP3 3º\\Avaliações\\LP3-ProjetoFinal\\Views\\Product\\Show.cshtml",
+      "TargetPath": "Views\\Product\\Show.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Administrador\\Documents\\Ensino Médio - 3° ano\\LP3 3º\\Avaliações\\LP3-ProjetoFinal\\Views\\CleaningTime\\Index.cshtml",
       "TargetPath": "Views\\CleaningTime\\Index.cshtml",
       "FileKind": "mvc"
@@ -16375,6 +16390,11 @@
     {
       "FilePath": "c:\\Users\\Administrador\\Documents\\Ensino Médio - 3° ano\\LP3 3º\\Avaliações\\LP3-ProjetoFinal\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Administrador\\Documents\\Ensino Médio - 3° ano\\LP3 3º\\Avaliações\\LP3-ProjetoFinal\\Views\\Product\\Create.cshtml",
+      "TargetPath": "Views\\Product\\Create.cshtml",
       "FileKind": "mvc"
     },
     {

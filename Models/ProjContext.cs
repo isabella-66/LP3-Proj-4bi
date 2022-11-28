@@ -4,7 +4,8 @@ namespace LP3_ProjetoFinal.Models;
 
 public class ProjContext : DbContext
 {
-
+    public DbSet<Store> Employees { get; set; }
+    
     public DbSet<MovieTheater> MovieTheaters { get; set; }
 
     public DbSet<CleaningTime> CleaningTimes { get; set; }
