@@ -11,18 +11,21 @@
     </p>
 
     <p>
-        <label for="starttime">Horário de início: </label>
+        <label asp-for="StartTime">Horário de início: </label>
         <input type="time" asp-for="StartTime" value="@Model.StartTime">
+        <span asp-validation-for="StartTime" class="text-danger"></span>
     </p>
 
     <p>
-        <label for="endtime">Horário de término: </label>
+        <label asp-for="EndTime">Horário de término: </label>
         <input type="time" asp-for="EndTime" value="@Model.EndTime">
+        <span asp-validation-for="EndTime" class="text-danger"></span>
     </p>
 
     <p>
-        <label for="employee">Funcionário: </label>
+        <label asp-for="Employee">Funcionário: </label>
         <input type="text" asp-for="Employee" value="@Model.Employee">
+        <span asp-validation-for="Employee" class="text-danger"></span>
     </p>
 
     <button type="submit">Salvar</button>

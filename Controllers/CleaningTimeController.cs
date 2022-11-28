@@ -33,6 +33,11 @@ public class CleaningTimeController : Controller
     [HttpPost]
     public IActionResult Create([FromForm] CleaningTime cleaningTime)
     {
+        if (!ModelState.IsValid)
+        {
+            return View(cleaningTime);
+        }
+
         _context.CleaningTimes.Add(cleaningTime);
         _context.SaveChanges();
 
@@ -62,6 +67,11 @@ public class CleaningTimeController : Controller
     [HttpPost]
     public IActionResult Update([FromForm] CleaningTime cleaningTime)
     {
+        if (!ModelState.IsValid)
+        {
+            return View(cleaningTime);
+        }
+        
         _context.CleaningTimes.Update(cleaningTime);
         _context.SaveChanges();
         return RedirectToAction(nameof(Index));
