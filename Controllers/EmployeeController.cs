@@ -13,4 +13,28 @@ public class EmployeeController : Controller
     }
 
     public IActionResult Index() => View(_context.Employees);
+
+    public IActionResult Create()
+    {
+        return View();
+    }  
+
+    [HttpPost]
+    public IActionResult Create([FromForm] Employee employee)
+    {
+        if (!ModelState.IsValid)
+        {
+            return View(employee);
+        }
+
+        if (_context.Employees.Find(employee.Id) != null) 
+        {
+            throw new Exception("Já existe um(a) funcionário com esse Id");
+        }
+
+        _context.Employees.Add(employee);
+        _context.SaveChanges();
+
+        return RedirectToAction("Index");
+    }
 }

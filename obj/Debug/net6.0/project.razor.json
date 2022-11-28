@@ -16348,6 +16348,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Administrador\\Documents\\Ensino Médio - 3° ano\\LP3 3º\\Avaliações\\LP3-ProjetoFinal\\Views\\Employee\\Create.cshtml",
+      "TargetPath": "Views\\Employee\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Administrador\\Documents\\Ensino Médio - 3° ano\\LP3 3º\\Avaliações\\LP3-ProjetoFinal\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"

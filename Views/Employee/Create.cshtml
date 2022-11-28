@@ -1,0 +1,75 @@
+@model LP3_ProjetoFinal.Models.Employee; 
+
+@{
+    ViewData["Title"] = $"Novo(a) Funcionário(a)";
+}
+
+<div class="text-center">
+    <h1>@ViewData["Title"]</h1>
+</div>
+<hr>
+
+<form asp-controller="Employee" asp-action="Create" method="post">
+    <div class="form-group row">
+        <label asp-for="Id" class="col-sm-2 col-form-label"><b>Id:</b></label>
+        <div class="col-md-3">
+            <input type="number" asp-for="Id" class="form-control" required>
+        </div>
+    </div><br>
+    
+    <div class="form-group row">
+        <label asp-for="Name" class="col-sm-2 col-form-label"><b>Nome:</b></label>
+        <div class="col">
+            <div class="col-md-9">
+                <input type="text" asp-for="Name" class="form-control" required>
+            </div>
+        </div>
+        <label asp-for="Lastname" class="col-sm-2 col-form-label"><b>Sobrenome:</b></label>
+        <div class="col">
+            <div class="col-md-9">
+                <input type="text" asp-for="Lastname" class="form-control" required>
+            </div>
+        </div>
+    </div><br>
+
+    <div class="form-group row">
+        <label asp-for="Birth" class="col-sm-2 col-form-label"><b>Data de nascimento:</b></label>
+        <div class="col-md-3">
+            <input type="date" asp-for="Birth" class="form-control" required>
+        </div>
+    </div><br>
+
+    <div class="form-group row">
+        <label asp-for="Occupation" class="col-sm-2 col-form-label"><b>Função:</b></label>
+        <div class="col-md-3">
+            <select asp-for="Occupation"  class="custom-select" required>
+                <option selected>--------</option>
+                <option value="AdministradorLojas">Administrador(a) das Lojas</option>
+                <option value="AdministradorSalas">Administrador(a) das Salas</option>
+                <option value="ControladorFilme">Controlador(a) dos Filmes</option>
+                <option value="Bilheteiro">Bilheteiro(a)</option>
+                <option value="Faxineiro">Faxineiro(a)</option>
+                <option value="FazTudo">Faz tudo</option>
+                <option value="Vendedor">Vendedor(a)</option>
+                <option value="Segurança">Segurança</option>
+            </select>
+        </div>
+    </div><br>
+
+    <div class="form-group row">
+        <label asp-for="EntryTime" class="col-sm-2 col-form-label"><b>Horário de chegada:</b></label>
+        <div class="col-md-3">
+            <input type="time" asp-for="EntryTime" class="form-control" required>
+        </div>
+    </div><br>
+
+    <div class="form-group row">
+        <label asp-for="DepartureTime" class="col-sm-2 col-form-label"><b>Horário de saída:</b></label>
+        <div class="col-md-3">
+            <input type="time" asp-for="DepartureTime" class="form-control" required>
+        </div>
+    </div><br>
+    
+    <button type="submit" class="btn btn-success">Enviar</button>
+    <a asp-controller="Employee" asp-action="Index" class="btn btn-outline-warning">Cancelar</a>
+</form>
