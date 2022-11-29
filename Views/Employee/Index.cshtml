@@ -37,10 +37,9 @@ else
                     <td>@employee.EntryTime</td>
                     <td>@employee.DepartureTime</td>
                     <td>
+                        <a class="btn btn-primary btn-sm" asp-controller="Employee" asp-action="Show" asp-route-id="@employee.Id">Ver</a>
                         <a class="btn btn-warning btn-sm" asp-controller="Employee" asp-action="Update" asp-route-id="@employee.Id">Atualizar</a>
                         <a class="btn btn-danger btn-sm" asp-controller="Employee" asp-action="Delete" asp-route-id="@employee.Id">Remover</a>
-                        @* <a class="btn btn-primary btn-sm" href="#">Ver</a>
-                         *@
                     </td>
                 </tr>
             }

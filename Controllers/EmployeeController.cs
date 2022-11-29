@@ -14,6 +14,18 @@ public class EmployeeController : Controller
 
     public IActionResult Index() => View(_context.Employees);
 
+    public IActionResult Show(int id) 
+    {
+        Employee employee = _context.Employees.Find(id);
+
+        if(employee == null)
+        {
+            return NotFound();
+        }
+
+        return View(employee);
+    }
+
     public IActionResult Create()
     {
         return View();

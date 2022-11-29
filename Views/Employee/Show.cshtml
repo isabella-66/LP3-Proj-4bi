@@ -1,0 +1,32 @@
+@model LP3_ProjetoFinal.Models.Employee; 
+
+@{
+    ViewData["Title"] = $"Funcionário(a) {Model.Id}";
+}
+
+<div class="text-center">
+    <h1>@ViewData["Title"]</h1>
+</div>
+<hr>
+<a asp-controller="Employee" asp-action="Update" asp-route-id="@Model.Id" class="btn btn-primary">Atualizar</a><br><br>
+
+<p>
+    <b>Id:</b> @Model.Id
+</p>
+<p>
+    <b>Nome:</b> @Model.Name
+</p>
+<p>
+    <b>Sobrenome:</b> @Model.Lastname
+</p>
+<p>
+    <b>Ocupação:</b> @Model.Occupation
+</p>
+<p>
+    <b>Horário de entrada:</b> @Model.EntryTime
+</p>
+<p>
+    <b>Horário de saída:</b> @Model.DepartureTime
+</p>
+
+<a asp-controller="Employee" asp-action="Index" class="btn btn-outline-primary">Voltar</a>
