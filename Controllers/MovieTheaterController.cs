@@ -48,6 +48,11 @@ public class MovieTheaterController : Controller
     [HttpPost]
     public IActionResult Update([FromForm] MovieTheater theater)
     {
+        if (!ModelState.IsValid)
+        {
+            return View(theater);
+        }
+        
         _context.MovieTheaters.Update(theater);
         _context.SaveChanges();
         return RedirectToAction(nameof(Index));
@@ -61,6 +66,21 @@ public class MovieTheaterController : Controller
     [HttpPost]
     public IActionResult Create([FromForm] MovieTheater theater)
     {
+        if (!ModelState.IsValid)
+        {
+            return View(theater);
+        }
+
+        if (_context.CleaningTimes.Find(theater.Id) != null) 
+        {
+            throw new Exception($"Já existe uma sala cadastrado com o id {theater.Id}");
+        }
+
+        if (_context.CleaningTimes.Find(theater.Number) != null) 
+        {
+            throw new Exception($"Já existe uma sala cadastrada com o número {theater.Number}");
+        }
+
         _context.MovieTheaters.Add(theater);
         _context.SaveChanges();
 
