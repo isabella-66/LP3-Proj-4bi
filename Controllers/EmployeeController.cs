@@ -69,4 +69,18 @@ public class EmployeeController : Controller
         _context.SaveChanges();
         return RedirectToAction("Index");
     }
+
+    public IActionResult Delete(int id)
+    {
+        Employee employee = _context.Employees.Find(id);
+
+        if(employee == null)
+        {
+            return NotFound();
+        }
+
+        _context.Employees.Remove(employee);
+        _context.SaveChanges();
+        return RedirectToAction("Index");
+    }
 }
