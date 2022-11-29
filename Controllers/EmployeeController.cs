@@ -27,14 +27,8 @@ public class EmployeeController : Controller
             return View(employee);
         }
 
-        if (_context.Employees.Find(employee.Id) != null) 
-        {
-            throw new Exception("Já existe um(a) funcionário com esse Id");
-        }
-
         _context.Employees.Add(employee);
         _context.SaveChanges();
-
         return RedirectToAction("Index");
     }
 }
