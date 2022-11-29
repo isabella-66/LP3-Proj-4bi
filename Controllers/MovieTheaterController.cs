@@ -71,6 +71,16 @@ public class MovieTheaterController : Controller
             return View(theater);
         }
 
+        if (_context.CleaningTimes.Find(theater.Id) != null) 
+        {
+            throw new Exception($"Já existe uma sala cadastrado com o id {theater.Id}");
+        }
+
+        if (_context.CleaningTimes.Find(theater.Number) != null) 
+        {
+            throw new Exception($"Já existe uma sala cadastrada com o número {theater.Number}");
+        }
+
         _context.MovieTheaters.Add(theater);
         _context.SaveChanges();
 

@@ -50,12 +50,12 @@ public class CleaningTimeController : Controller
 
         if(cleaningTime.EndTime.Subtract(cleaningTime.StartTime).Minutes < 30 || cleaningTime.EndTime.Subtract(cleaningTime.StartTime).Minutes > 60)
         {
-            throw new Exception("O tempo de limpeza deve ser realizado entre 30 a 90 minutos");
+            throw new Exception("O tempo de limpeza deve ser realizado entre 30 a 60 minutos");
         }
 
         if (_context.CleaningTimes.Find(cleaningTime.Id) != null) 
         {
-            throw new Exception("Já um horário cadastrado com esse Id");
+            throw new Exception($"Já existe um horário cadastrado com o id {cleaningTime.Id}");
         }
 
         _context.CleaningTimes.Add(cleaningTime);
