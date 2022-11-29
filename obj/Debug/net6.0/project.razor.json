@@ -16398,6 +16398,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Administrador\\Documents\\Ensino Médio - 3° ano\\LP3 3º\\Avaliações\\LP3-ProjetoFinal\\Views\\Employee\\Update.cshtml",
+      "TargetPath": "Views\\Employee\\Update.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Administrador\\Documents\\Ensino Médio - 3° ano\\LP3 3º\\Avaliações\\LP3-ProjetoFinal\\Views\\CleaningTime\\Index.cshtml",
       "TargetPath": "Views\\CleaningTime\\Index.cshtml",
       "FileKind": "mvc"

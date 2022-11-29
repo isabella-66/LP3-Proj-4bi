@@ -23,6 +23,7 @@ else
                 <th>Função</th>
                 <th>Horário de entrada</th>
                 <th>Horário de saída</th>
+                <th colspan="3"></th>
             </tr>
         </thead>
         <tbody>
@@ -36,8 +37,8 @@ else
                     <td>@employee.EntryTime</td>
                     <td>@employee.DepartureTime</td>
                     <td>
+                        <a class="btn btn-warning btn-sm" asp-controller="Employee" asp-action="Update" asp-route-id="@employee.Id">Atualizar</a>
                         @* <a class="btn btn-primary btn-sm" href="#">Ver</a>
-                        <a class="btn btn-warning btn-sm">Atualizar</a>
                         <a class="btn btn-danger btn-sm" href="#">Remover</a> *@
                     </td>
                 </tr>

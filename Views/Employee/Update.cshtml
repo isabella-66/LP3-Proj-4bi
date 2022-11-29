@@ -1,7 +1,7 @@
 @model LP3_ProjetoFinal.Models.Employee; 
 
 @{
-    ViewData["Title"] = $"Novo(a) Funcionário(a)";
+    ViewData["Title"] = $"Atualizar Funcionário(a) { Model.Name }";
 }
 
 <div class="text-center">
@@ -9,11 +9,11 @@
 </div>
 <hr>
 
-<form asp-action="Create" method="post">
+<form asp-action="Update" asp-route-id="@Model.Id" method="post">
     <div class="form-group row">
         <label asp-for="Id" class="col-sm-2 col-form-label"><b>Id:</b></label>
         <div class="col-md-3">
-            <input type="number" asp-for="Id" class="form-control" required>
+            <input asp-for="Id" value="@Model.Id" class="form-control-plaintext" disabled>
         </div>
     </div><br>
     
@@ -21,13 +21,13 @@
         <label asp-for="Name" class="col-sm-2 col-form-label"><b>Nome:</b></label>
         <div class="col">
             <div class="col-md-9">
-                <input type="text" asp-for="Name" class="form-control" required>
+                <input type="text" asp-for="Name" value="@Model.Name" class="form-control" required>
             </div>
         </div>
         <label asp-for="Lastname" class="col-sm-2 col-form-label"><b>Sobrenome:</b></label>
         <div class="col">
             <div class="col-md-9">
-                <input type="text" asp-for="Lastname" class="form-control" required>
+                <input type="text" asp-for="Lastname" value="@Model.Lastname" class="form-control" required>
             </div>
         </div>
     </div><br>
@@ -35,7 +35,7 @@
     <div class="form-group row">
         <label asp-for="Occupation" class="col-sm-2 col-form-label"><b>Função:</b></label>
         <div class="col-md-3">
-            <select asp-for="Occupation"  class="custom-select" required>
+            <select asp-for="Occupation" class="custom-select" required>
                 <option selected>--------</option>
                 <option value="AdministradorLojas">Administrador(a) das Lojas</option>
                 <option value="AdministradorSalas">Administrador(a) das Salas</option>
@@ -52,14 +52,14 @@
     <div class="form-group row">
         <label asp-for="EntryTime" class="col-sm-2 col-form-label"><b>Horário de chegada:</b></label>
         <div class="col-md-3">
-            <input type="time" asp-for="EntryTime" class="form-control" required>
+            <input type="time" asp-for="EntryTime" value="@Model.EntryTime" class="form-control" required>
         </div>
     </div><br>
 
     <div class="form-group row">
         <label asp-for="DepartureTime" class="col-sm-2 col-form-label"><b>Horário de saída:</b></label>
         <div class="col-md-3">
-            <input type="time" asp-for="DepartureTime" class="form-control" required>
+            <input type="time" asp-for="DepartureTime" value="@Model.DepartureTime" class="form-control" required>
         </div>
     </div><br>
     
