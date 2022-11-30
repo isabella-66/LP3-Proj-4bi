@@ -16358,6 +16358,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Administrador\\Documents\\Ensino Médio - 3° ano\\LP3 3º\\Avaliações\\LP3-ProjetoFinal\\Views\\Film\\Index.cshtml",
+      "TargetPath": "Views\\Film\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Administrador\\Documents\\Ensino Médio - 3° ano\\LP3 3º\\Avaliações\\LP3-ProjetoFinal\\Views\\Store\\Show.cshtml",
       "TargetPath": "Views\\Store\\Show.cshtml",
       "FileKind": "mvc"

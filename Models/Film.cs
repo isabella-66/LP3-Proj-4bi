@@ -13,6 +13,7 @@ public class Film
     // public string Session { get; set; }
     [ForeignKey("MovieTheater")]
     public int MovieTheaterId { get; set; }
+    public MovieTheater MovieTheater { get; set; }
     
     public Film() { }
 
