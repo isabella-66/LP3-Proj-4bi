@@ -5,7 +5,7 @@
 }
 <h1>@ViewData["Title"]</h1>
 
-<form id="form" action="Create" method="post">
+<form asp-controller="MovieTheater" asp-action="Create" method="post">
     <p>
         <label asp-for="Id">Id: </label>
         <input type="number" asp-for="Id">
