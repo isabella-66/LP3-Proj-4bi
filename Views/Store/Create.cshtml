@@ -5,21 +5,20 @@
 }
 <h1>@ViewData["Title"]</h1>
 
-<form id="form" action="Create" method="post">
-    <p>
-        <label for="Id">Id: </label>
-        <input type="number" name="Id">
-    </p>
+<form asp-controller="Store" asp-action="Create" method="post">
 
-    <p>
-        <label for="Name">Nome: </label>
-        <input type="text" name="Name">
-    </p>
+        <label for="Id">Id: </label> <br>
+        <input type="number" name="Id"> <br>
+        <span asp-validation-for="Id" class="text-danger"></span> <br>
 
-    <p>
-        <label for="Description">Descrição: </label>
-        <input type="text" name="Description">
-    </p>
+        <label for="Name">Nome: </label> <br>
+        <input type="text" name="Name"> <br>
+        <span asp-validation-for="Name" class="text-danger"></span> <br>
 
-    <button type="submit">Salvar</button>
+
+        <label for="Description">Descrição: </label> <br>
+        <input type="text" name="Description"> <br>
+        <span asp-validation-for="Description" class="text-danger"></span> <br>
+
+    <button class="btn btn-success mt-2" type="submit">Salvar</button>
 </form>

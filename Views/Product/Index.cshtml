@@ -33,7 +33,13 @@ else
                     <td>@product.Description</td>
                     <td>@product.Quantity</td>
                     <td>@product.StoreId</td>
-                <!--Ações-->
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Product/Show/@product.Id">Detalhes</a>
+                     <a class="btn btn-warning btn-sm" asp-controller="Product" asp-action="Update"
+                    asp-route-id="@product.Id">Atualizar</a>
+                    <a class="btn btn-danger btn-sm" href="/Product/Delete/
+                    @product.Id">Remover</a> 
+                </td>
                 </tr>
             }
         </tbody>
