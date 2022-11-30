@@ -4,27 +4,27 @@ namespace LP3_ProjetoFinal.Models;
 
 public class Film
 {
-    [Required]
+    [Required (ErrorMessage = "Campo Id deve ser preenchido.")]
     public int Id { get; set; }
-    [Required]
+    [Required (ErrorMessage = "Campo Título deve ser preenchido.")]
     [StringLength(40)]
     public string Title { get; set; }
-    [Required]
+    [Required (ErrorMessage = "Campo Direção deve ser preenchido.")]
     [StringLength(100)]
     public string Director { get; set; }
-    [Required]
+    [Required (ErrorMessage = "Campo Sinopse deve ser preenchido.")]
     [StringLength(500)]
     public string Description { get; set; }
-    [Required]
+    [Required (ErrorMessage = "Campo Quantidade Ingressos deve ser preenchido.")]
     public int Ticket { get; set; }
-    [Required]
+    [Required (ErrorMessage = "Campo Dia da Sessão deve ser preenchido.")]
     public int DaySession { get; set; }
-    [Required]
+    [Required (ErrorMessage = "Campo Mês da Sessão deve ser preenchido.")]
     [StringLength(20)]
     public string MonthSession { get; set; }
-    [Required]
+    [Required (ErrorMessage = "Campo Ano da Sessão deve ser preenchido.")]
     public int HourSession { get; set; }
-    [Required]
+    [Required (ErrorMessage = "Campo Sala deve ser preenchido.")]
     public int MovieTheater { get; set; }
     
     public Film() { }
