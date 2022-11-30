@@ -14,6 +14,17 @@ public class FilmController : Controller
 
     public IActionResult Index() => View(_context.Films);
 
+    public IActionResult Show(int id) {
+        Film film = _context.Films.Find(id);
+
+        if(film == null)
+        {
+            return NotFound();
+        }
+
+        return View(film);
+    }
+
     public IActionResult Create()
     {
         return View();

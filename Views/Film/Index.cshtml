@@ -36,9 +36,10 @@ else
                     @* <td>@film.Description</td>
                     <td>@film.Ticket</td>
                     <td>@film.MovieTheater</td> *@
-                    @* <td>
+                    <td>
                         <a class="btn btn-primary btn-sm" asp-controller="Film" asp-action="Show" asp-route-id="@film.Id">Ver</a>
                     </td>
+                    @* 
                     <td>
                         <a class="btn btn-warning btn-sm" asp-controller="Film" asp-action="Update" asp-route-id="@film.Id">Atualizar</a>
                     </td>

@@ -1,0 +1,32 @@
+@model LP3_ProjetoFinal.Models.Film; 
+
+@{
+    ViewData["Title"] = $"Filme {Model.Id}";
+}
+
+<div class="text-center">
+    <h1>@ViewData["Title"]</h1>
+</div>
+<hr>
+@* <a asp-controller="Film" asp-action="Update" asp-route-id="@Model.Id" class="btn btn-primary">Atualizar</a><br><br> *@
+
+<p>
+    <b>Id:</b> @Model.Id
+</p>
+<p>
+    <b>Título:</b> @Model.Title
+</p>
+<p>
+    <b>Diretor(a):</b> @Model.Director
+</p>
+<p>
+    <b>Descrição:</b> @Model.Description
+</p>
+<p>
+    <b>Quantidade de ingressos:</b> @Model.Ticket
+</p>
+<p>
+    <b>Sala:</b> @Model.MovieTheater
+</p>
+
+<a asp-controller="Film" asp-action="Index" class="btn btn-outline-primary">Voltar</a>
