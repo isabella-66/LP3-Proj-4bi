@@ -8,7 +8,7 @@ public class ProjContext : DbContext
     
     public DbSet<MovieTheater> MovieTheaters { get; set; }
 
-    public DbSet<Employee> Films { get; set; }
+    public DbSet<Film> Films { get; set; }
 
     public DbSet<CleaningTime> CleaningTimes { get; set; }
 
