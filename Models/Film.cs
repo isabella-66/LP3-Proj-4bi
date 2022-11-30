@@ -11,19 +11,18 @@ public class Film
     // public string Duration { get; set; }
     public int Ticket { get; set; }
     // public string Session { get; set; }
-    [ForeignKey("MovieTheater")]
-    public int MovieTheaterId { get; set; }
-    public MovieTheater MovieTheater { get; set; }
+    // [ForeignKey("MovieTheater")]
+    public int MovieTheater { get; set; }
     
     public Film() { }
 
-    public Film(int id, string title, string director, string description, int ticket, int movieTheaterId)
+    public Film(int id, string title, string director, string description, int ticket, int movieTheater)
     {
         Id = id;
         Title = title;
         Director = director;
         Description = description;
         Ticket = ticket;
-        MovieTheaterId = movieTheaterId;
+        MovieTheater = movieTheater;
     }    
 }
