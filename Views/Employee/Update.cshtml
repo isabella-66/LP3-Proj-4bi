@@ -9,7 +9,7 @@
 </div>
 <hr>
 
-<form asp-action="Update" asp-route-id="@Model.Id" method="post">
+<form asp-controller="Employee" asp-action="Update" asp-route-id="@Model.Id" method="post">
     <div class="form-group row">
         <label asp-for="Id" class="col-sm-2 col-form-label"><b>Id:</b></label>
         <div class="col-md-3">
