@@ -20,9 +20,6 @@ else
                 <th>Id</th>
                 <th>Título</th>
                 <th>Diretor</th>
-                @* <th>Descrição</th>
-                <th>Quantidade de ingressos</th>
-                <th>Sala</th> *@
                 <th colspan="3"></th>
             </tr>
         </thead>
@@ -33,9 +30,6 @@ else
                     <td>@film.Id</td>
                     <td>@film.Title</td>
                     <td>@film.Director</td>
-                    @* <td>@film.Description</td>
-                    <td>@film.Ticket</td>
-                    <td>@film.MovieTheater</td> *@
                     <td>
                         <a class="btn btn-primary btn-sm" asp-controller="Film" asp-action="Show" asp-route-id="@film.Id">Ver</a>
                     </td>
