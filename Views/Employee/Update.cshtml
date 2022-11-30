@@ -52,14 +52,14 @@
     <div class="form-group row">
         <label asp-for="EntryTime" class="col-sm-2 col-form-label"><b>Horário de chegada:</b></label>
         <div class="col-md-3">
-            <input type="time" asp-for="EntryTime" value="@Model.EntryTime" class="form-control" required>
+            <input type="number" asp-for="EntryTime" value="@Model.EntryTime" class="form-control" required>
         </div>
     </div><br>
 
     <div class="form-group row">
         <label asp-for="DepartureTime" class="col-sm-2 col-form-label"><b>Horário de saída:</b></label>
         <div class="col-md-3">
-            <input type="time" asp-for="DepartureTime" value="@Model.DepartureTime" class="form-control" required>
+            <input type="number" asp-for="DepartureTime" value="@Model.DepartureTime" class="form-control" required>
         </div>
     </div><br>
     

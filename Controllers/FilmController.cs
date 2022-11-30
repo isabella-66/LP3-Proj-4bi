@@ -59,11 +59,6 @@ public class FilmController : Controller
     [HttpPost]
     public IActionResult Update([FromForm] Film film)
     {
-        if (!ModelState.IsValid)
-        {
-            return View(film);
-        }
-
         Film filmFound = _context.Films.Find(film.Id);
 
         if (filmFound == null)
@@ -76,6 +71,9 @@ public class FilmController : Controller
         filmFound.Director = film.Director;
         filmFound.Description = film.Description;
         filmFound.Ticket = film.Ticket;
+        filmFound.DaySession = film.DaySession;
+        filmFound.MonthSession = film.MonthSession;
+        filmFound.HourSession = film.HourSession;
         filmFound.MovieTheater = film.MovieTheater;
 
         _context.Films.Update(filmFound);
