@@ -82,4 +82,18 @@ public class FilmController : Controller
         _context.SaveChanges();
         return RedirectToAction("Index");
     }
+
+    public IActionResult Delete(int id)
+    {
+        Film film = _context.Films.Find(id);
+
+        if(film == null)
+        {
+            return NotFound();
+        }
+
+        _context.Films.Remove(film);
+        _context.SaveChanges();
+        return RedirectToAction("Index");
+    }
 }
