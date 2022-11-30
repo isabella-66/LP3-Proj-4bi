@@ -14,7 +14,7 @@ public class Store
     [Required]
     [StringLength(200)]
     public string Description { get; set; }
-    
+
     public Store() { }
 
     public Store(int id, string name, string description)
@@ -22,5 +22,5 @@ public class Store
         Id = id;
         Name = name;
         Description = description;
-    }    
+    }
 }

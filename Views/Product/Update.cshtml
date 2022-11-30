@@ -6,33 +6,27 @@
 <h1>@ViewData["Title"]</h1>
 
 <form asp-controller="Product" asp-action="Update" method="post">
-    <p>
-        <input type="hidden" asp-for="Id" value="@Model.Id">
-    </p>
 
-    <p>
-        <label for="Name">Nome: </label>
-        <input type="text" asp-for="Name" value="@Model.Name">
-    </p>
+    <input type="hidden" asp-for="Id" value="@Model.Id">
 
-    <p>
-        <label for="Price">Preço: </label>
-        <input type="number" asp-for="Price" value="@Model.Price">
-    </p>
+    <label for="Name">Nome: </label> <br>
+    <input type="text" asp-for="Name" value="@Model.Name"> <br>
+    <span asp-validation-for="Name" class="text-danger"></span> <br>
 
-    <p>
-        <label for="Description">Descrição: </label>
-        <input type="text" asp-for="Description" value="@Model.Description">
-    </p>
 
-    <p>
-        <label for="Quantity">Quantidade: </label>
-        <input type="number" asp-for="Quantity" value="@Model.Quantity">
-    </p>
+    <label for="Price">Preço: </label> <br>
+    <input type="number" asp-for="Price" value="@Model.Price"> <br>
+    <span asp-validation-for="Price" class="text-danger"></span> <br>
 
-    <p>
-        <input type="hidden" name="StoreId" value="@Model.StoreId">
-    </p>
+    <label for="Description">Descrição: </label> <br>
+    <input type="text" asp-for="Description" value="@Model.Description"> <br>
+    <span asp-validation-for="Description" class="text-danger"></span> <br>
 
-    <button type="submit">Salvar</button>
+    <label for="Quantity">Quantidade: </label> <br>
+    <input type="number" asp-for="Quantity" value="@Model.Quantity"> <br>
+    <span asp-validation-for="Quantity" class="text-danger"></span> <br>
+
+    <input class="btn btn-success mt-2" type="hidden" name="StoreId" value="@Model.StoreId"> <br>
+
+    <button class="btn btn-success mt-2" type="submit">Salvar</button>
 </form>

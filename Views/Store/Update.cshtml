@@ -6,14 +6,14 @@
 <h1>@ViewData["Title"]</h1>
 
 <form asp-controller="Store" asp-action="Update" method="post">
-  
+
     <input type="hidden" asp-for="Id" value="@Model.Id"> <br>
-    
+
     <label for="Name">Nome: </label> <br>
     <input type="text" asp-for="Name" value="@Model.Name"> <br>
     <span asp-validation-for="Name" class="text-danger"></span> <br>
 
-    
+
     <label for="Description">Descrição: </label> <br>
     <input type="text" asp-for="Description" value="@Model.Description"> <br>
     <span asp-validation-for="Description" class="text-danger"></span> <br>
