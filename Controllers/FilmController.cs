@@ -33,7 +33,6 @@ public class FilmController : Controller
     [HttpPost]
     public IActionResult Create([FromForm] Film film)
     {
-
         if (!ModelState.IsValid)
         {
             return View(film);

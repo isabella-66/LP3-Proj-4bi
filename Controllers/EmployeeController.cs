@@ -58,11 +58,6 @@ public class EmployeeController : Controller
     [HttpPost]
     public IActionResult Update([FromForm] Employee employee)
     {
-        // if (!ModelState.IsValid)
-        // {
-        //     return View(employee);
-        // }
-
         Employee employeeFound = _context.Employees.Find(employee.Id);
 
         if (employeeFound == null)

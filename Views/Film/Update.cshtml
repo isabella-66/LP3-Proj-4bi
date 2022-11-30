@@ -20,36 +20,76 @@
     <div class="form-group row">
         <label asp-for="Title" class="col-sm-2 col-form-label"><b>Título:</b></label>
         <div class="col-md-3">
-            <input type="text" asp-for="Title" class="form-control" required>
+            <input type="text" value="@Model.Title" asp-for="Title" class="form-control" required>
+            <span asp-validation-for="Title" class="text-danger"></span>
         </div>
     </div><br>
 
     <div class="form-group row">
         <label asp-for="Director" class="col-sm-2 col-form-label"><b>Diretor(a):</b></label>
         <div class="col-md-3">
-            <input type="text" asp-for="Director" class="form-control" required>
+            <input type="text" value="@Model.Director" asp-for="Director" class="form-control" required>
+            <span asp-validation-for="Director" class="text-danger"></span>
         </div>
     </div><br>
 
     <div class="form-group row">
         <label asp-for="Description" class="col-sm-2 col-form-label"><b>Sinopse:</b></label>
         <div class="">
-            <textarea asp-for="Description" class="form-control" required></textarea>
+            <textarea asp-for="Description" value="@Model.Description" class="form-control" required></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
         </div>
     </div><br>
 
     <div class="form-group row">
         <label asp-for="Ticket" class="col-sm-2 col-form-label"><b>Quantidade de ingressos:</b></label>
         <div class="col-md-3">
-            <input type="number" asp-for="Ticket" class="form-control" required>
+            <input type="number" value="@Model.Ticket" asp-for="Ticket" class="form-control" required>
+            <span asp-validation-for="Ticket" class="text-danger"></span>
         </div>
     </div><br>
 
     <div class="form-group row">
         <label asp-for="MovieTheater" class="col-sm-2 col-form-label"><b>Sala:</b></label>
         <div class="col-md-3">
-            <input type="number" asp-for="MovieTheater" class="form-control" required>
+            <input type="number" value="@Model.MovieTheater" asp-for="MovieTheater" class="form-control" required>
+            <span asp-validation-for="MovieTheater" class="text-danger"></span>
         </div>
+    </div><br>
+
+    <div class="form-group row">
+        <fieldset>
+            <legend>Sessão</legend>
+            <label asp-for="DaySession" class="col-sm-2 col-form-label"><b>Dia:</b></label>
+            <div class="col-md-3">
+                <input type="number" value="@Model.DaySession" asp-for="DaySession" class="form-control" required>
+                <span asp-validation-for="DaySession" class="text-danger"></span>
+            </div>
+            <label asp-for="MonthSession" class="col-sm-2 col-form-label"><b>Mês:</b></label>
+            <div class="col-md-3">
+                <select asp-for="MonthSession" class="custom-select" required>
+                    <option selected>--------</option>
+                    <option value="Janeiro">Janeiro</option>
+                    <option value="Fevereiro">Fevereiro</option>
+                    <option value="Março">Março</option>
+                    <option value="Abril">Abril</option>
+                    <option value="Maio">Maio</option>
+                    <option value="Junho">Junho</option>
+                    <option value="Julho">Julho</option>
+                    <option value="Agosto">Agosto</option>
+                    <option value="Setembro">Setembro</option>
+                    <option value="Outubro">Outubro</option>
+                    <option value="Novembro">Novembro</option>
+                    <option value="Dezembro">Dezembro</option>
+                </select>
+                <span asp-validation-for="MonthSession" class="text-danger"></span>
+            </div>
+            <label asp-for="HourSession" class="col-sm-2 col-form-label"><b>Hora:</b></label>
+            <div class="col-md-3">
+                <input type="string" value="@Model.HourSession" asp-for="HourSession" class="form-control" required>
+                <span asp-validation-for="HourSession" class="text-danger"></span>
+            </div>
+        </fieldset>
     </div><br>
     
     <button type="submit" class="btn btn-success">Enviar</button>

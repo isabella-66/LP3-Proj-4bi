@@ -14,6 +14,7 @@
         <label asp-for="Id" class="col-sm-2 col-form-label"><b>Id:</b></label>
         <div class="col-md-3">
             <input type="number" asp-for="Id" class="form-control" required>
+            <span asp-validation-for="Id" class="text-danger"></span>
         </div>
     </div><br>
     
@@ -21,6 +22,7 @@
         <label asp-for="Title" class="col-sm-2 col-form-label"><b>Título:</b></label>
         <div class="col-md-3">
             <input type="text" asp-for="Title" class="form-control" required>
+            <span asp-validation-for="Title" class="text-danger"></span>
         </div>
     </div><br>
 
@@ -28,6 +30,7 @@
         <label asp-for="Director" class="col-sm-2 col-form-label"><b>Diretor(a):</b></label>
         <div class="col-md-3">
             <input type="text" asp-for="Director" class="form-control" required>
+            <span asp-validation-for="Director" class="text-danger"></span>
         </div>
     </div><br>
 
@@ -35,6 +38,7 @@
         <label asp-for="Description" class="col-sm-2 col-form-label"><b>Sinopse:</b></label>
         <div class="">
             <textarea asp-for="Description" class="form-control" required></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
         </div>
     </div><br>
 
@@ -42,6 +46,7 @@
         <label asp-for="Ticket" class="col-sm-2 col-form-label"><b>Quantidade de ingressos:</b></label>
         <div class="col-md-3">
             <input type="number" asp-for="Ticket" class="form-control" required>
+            <span asp-validation-for="Ticket" class="text-danger"></span>
         </div>
     </div><br>
 
@@ -49,6 +54,7 @@
         <label asp-for="MovieTheater" class="col-sm-2 col-form-label"><b>Sala:</b></label>
         <div class="col-md-3">
             <input type="number" asp-for="MovieTheater" class="form-control" required>
+            <span asp-validation-for="MovieTheater" class="text-danger"></span>
         </div>
     </div><br>
 
@@ -58,6 +64,7 @@
             <label asp-for="DaySession" class="col-sm-2 col-form-label"><b>Dia:</b></label>
             <div class="col-md-3">
                 <input type="number" asp-for="DaySession" class="form-control" required>
+                <span asp-validation-for="DaySession" class="text-danger"></span>
             </div>
             <label asp-for="MonthSession" class="col-sm-2 col-form-label"><b>Mês:</b></label>
             <div class="col-md-3">
@@ -76,10 +83,12 @@
                     <option value="Novembro">Novembro</option>
                     <option value="Dezembro">Dezembro</option>
                 </select>
+                <span asp-validation-for="MonthSession" class="text-danger"></span>
             </div>
             <label asp-for="HourSession" class="col-sm-2 col-form-label"><b>Hora:</b></label>
             <div class="col-md-3">
                 <input type="string" asp-for="HourSession" class="form-control" required>
+                <span asp-validation-for="HourSession" class="text-danger"></span>
             </div>
         </fieldset>
     </div><br>

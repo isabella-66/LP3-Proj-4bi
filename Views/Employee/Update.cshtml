@@ -22,12 +22,14 @@
         <div class="col">
             <div class="col-md-9">
                 <input type="text" asp-for="Name" value="@Model.Name" class="form-control" required>
+                <span asp-validation-for="Name" class="text-danger"></span>
             </div>
         </div>
         <label asp-for="Lastname" class="col-sm-2 col-form-label"><b>Sobrenome:</b></label>
         <div class="col">
             <div class="col-md-9">
                 <input type="text" asp-for="Lastname" value="@Model.Lastname" class="form-control" required>
+                <span asp-validation-for="Lastname" class="text-danger"></span>
             </div>
         </div>
     </div><br>
@@ -46,6 +48,7 @@
                 <option value="Vendedor">Vendedor(a)</option>
                 <option value="Segurança">Segurança</option>
             </select>
+            <span asp-validation-for="Occupation" class="text-danger"></span>
         </div>
     </div><br>
 
@@ -53,6 +56,7 @@
         <label asp-for="EntryTime" class="col-sm-2 col-form-label"><b>Horário de chegada:</b></label>
         <div class="col-md-3">
             <input type="number" asp-for="EntryTime" value="@Model.EntryTime" class="form-control" required>
+            <span asp-validation-for="EntryTime" class="text-danger"></span>
         </div>
     </div><br>
 
@@ -60,6 +64,7 @@
         <label asp-for="DepartureTime" class="col-sm-2 col-form-label"><b>Horário de saída:</b></label>
         <div class="col-md-3">
             <input type="number" asp-for="DepartureTime" value="@Model.DepartureTime" class="form-control" required>
+            <span asp-validation-for="DepartureTime" class="text-danger"></span>
         </div>
     </div><br>
     
