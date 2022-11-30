@@ -32,9 +32,9 @@ else
                     <td>@theater.NumberSeats</td>
                     <td>@theater.Hall</td>
                     <td>
-                        <a class="btn btn-primary btn-sm" href="/MovieTheater/Show/@theater.Id">Ver</a>
-                        <a class="btn btn-primary btn-sm" href="/MovieTheater/Update/@theater.Id">Editar</a>
-                        <a class="btn btn-primary btn-sm" href="/MovieTheater/Delete/@theater.Id">Remover</a>
+                       <a class="btn btn-primary btn-sm" asp-controller="MovieTheater" asp-action="Show" asp-route-id="@theater.Id">Ver</a>
+                       <a class="btn btn-primary btn-sm" asp-controller="MovieTheater" asp-action="Update" asp-route-id="@theater.Id">Atualizar</a>
+                       <a class="btn btn-primary btn-sm" asp-controller="MovieTheater" asp-action="Delete" asp-route-id="@theater.Id">Remover</a> 
                     </td>
                 </tr>
             }
