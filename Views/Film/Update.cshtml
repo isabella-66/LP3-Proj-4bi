@@ -1,0 +1,57 @@
+@model LP3_ProjetoFinal.Models.Film; 
+
+@{
+    ViewData["Title"] = $"Atualizar Filme { Model.Title }";
+}
+
+<div class="text-center">
+    <h1>@ViewData["Title"]</h1>
+</div>
+<hr>
+
+<form asp-controller="Film" asp-action="Update" method="post">
+    <div class="form-group row">
+        <label asp-for="Id" class="col-sm-2 col-form-label"><b>Id:</b></label>
+        <div class="col-md-3">
+            <input asp-for="Id" value="@Model.Id" class="form-control-plaintext" disabled>
+        </div>
+    </div><br>
+    
+    <div class="form-group row">
+        <label asp-for="Title" class="col-sm-2 col-form-label"><b>Título:</b></label>
+        <div class="col-md-3">
+            <input type="text" asp-for="Title" class="form-control" required>
+        </div>
+    </div><br>
+
+    <div class="form-group row">
+        <label asp-for="Director" class="col-sm-2 col-form-label"><b>Diretor(a):</b></label>
+        <div class="col-md-3">
+            <input type="text" asp-for="Director" class="form-control" required>
+        </div>
+    </div><br>
+
+    <div class="form-group row">
+        <label asp-for="Description" class="col-sm-2 col-form-label"><b>Sinopse:</b></label>
+        <div class="">
+            <textarea asp-for="Description" class="form-control" required></textarea>
+        </div>
+    </div><br>
+
+    <div class="form-group row">
+        <label asp-for="Ticket" class="col-sm-2 col-form-label"><b>Quantidade de ingressos:</b></label>
+        <div class="col-md-3">
+            <input type="number" asp-for="Ticket" class="form-control" required>
+        </div>
+    </div><br>
+
+    <div class="form-group row">
+        <label asp-for="MovieTheater" class="col-sm-2 col-form-label"><b>Sala:</b></label>
+        <div class="col-md-3">
+            <input type="number" asp-for="MovieTheater" class="form-control" required>
+        </div>
+    </div><br>
+    
+    <button type="submit" class="btn btn-success">Enviar</button>
+    <a asp-controller="Film" asp-action="Index" class="btn btn-outline-warning">Cancelar</a>
+</form>

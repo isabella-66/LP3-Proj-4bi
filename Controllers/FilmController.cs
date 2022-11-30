@@ -49,4 +49,37 @@ public class FilmController : Controller
 
         return RedirectToAction("Index");
     }
+
+    public IActionResult Update(int id)
+    {
+        Film film = _context.Films.Find(id);
+        return View(film);
+    }
+
+    [HttpPost]
+    public IActionResult Update([FromForm] Film film)
+    {
+        if (!ModelState.IsValid)
+        {
+            return View(film);
+        }
+
+        Film filmFound = _context.Films.Find(film.Id);
+
+        if (filmFound == null)
+        {
+            return NotFound();
+        }
+
+        filmFound.Id = film.Id;
+        filmFound.Title = film.Title;
+        filmFound.Director = film.Director;
+        filmFound.Description = film.Description;
+        filmFound.Ticket = film.Ticket;
+        filmFound.MovieTheater = film.MovieTheater;
+
+        _context.Films.Update(filmFound);
+        _context.SaveChanges();
+        return RedirectToAction("Index");
+    }
 }
