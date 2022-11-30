@@ -5,7 +5,7 @@
 }
 <h1>@ViewData["Title"]</h1>
 
-<form controller="CleaningTime" action="Create" method="post">
+<form asp-controller="CleaningTime" asp-action="Create" method="post">
     <p>
         <label asp-for="Id">Id: </label>
         <input type="number" asp-for="Id">
