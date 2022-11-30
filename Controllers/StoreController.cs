@@ -35,10 +35,17 @@ public class StoreController : Controller
             return NotFound();
         }
 
-        // colocar exceção quando tem produto - foreign key
-
+        try
+        {
         _context.Stores.Remove(store);
         _context.SaveChanges();
+        }
+
+        catch (Exception ex)
+        {
+        throw new Exception("Não é possível apagar uma loja que tenha produtos registrados");
+        }
+
         return RedirectToAction(nameof(Index));
     }
     

@@ -28,11 +28,13 @@ else
                     <td>@store.Name</td>
                     <td>@store.Description</td>
                 <td>
-                    <a class="btn btn-primary btn-sm" href="/Store/Show/@store.Id">Ver</a>
+                     <a class="btn btn-primary btn-sm" asp-controller="Store" asp-action="Show" asp-route-id="@store.Id">Detalhes</a>
+
                      <a class="btn btn-warning btn-sm" asp-controller="Store" asp-action="Update"
-                    asp-route-id="@store.Id">Atualizar</a>
-                    <a class="btn btn-danger btn-sm" href="/Store/Delete/
-                    @store.Id">Remover</a>
+                     asp-route-id="@store.Id">Atualizar</a>
+
+                     <a class="btn btn-danger btn-sm" asp-controller="Store" asp-action="Delete"
+                     asp-route-id="@store.Id">Remover</a>
                 </td>
                 </tr>
             }
