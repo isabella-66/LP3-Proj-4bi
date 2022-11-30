@@ -6,27 +6,27 @@
 <h1>@ViewData["Title"]</h1>
 
 <form asp-controller="Product" asp-action="Update" method="post">
-    
-        <input type="hidden" asp-for="Id" value="@Model.Id">
-    
-        <label for="Name">Nome: </label> <br>
-        <input type="text" asp-for="Name" value="@Model.Name"> <br>
-        <span asp-validation-for="Name" class="text-danger"></span> <br>
+
+    <input type="hidden" asp-for="Id" value="@Model.Id">
+
+    <label for="Name">Nome: </label> <br>
+    <input type="text" asp-for="Name" value="@Model.Name"> <br>
+    <span asp-validation-for="Name" class="text-danger"></span> <br>
 
 
-        <label for="Price">Preço: </label> <br>
-        <input type="number" asp-for="Price" value="@Model.Price"> <br>
-        <span asp-validation-for="Price" class="text-danger"></span> <br>
+    <label for="Price">Preço: </label> <br>
+    <input type="number" asp-for="Price" value="@Model.Price"> <br>
+    <span asp-validation-for="Price" class="text-danger"></span> <br>
 
-        <label for="Description">Descrição: </label> <br>
-        <input type="text" asp-for="Description" value="@Model.Description"> <br>
-        <span asp-validation-for="Description" class="text-danger"></span> <br>
+    <label for="Description">Descrição: </label> <br>
+    <input type="text" asp-for="Description" value="@Model.Description"> <br>
+    <span asp-validation-for="Description" class="text-danger"></span> <br>
 
-        <label for="Quantity">Quantidade: </label> <br>
-        <input type="number" asp-for="Quantity" value="@Model.Quantity"> <br>
-        <span asp-validation-for="Quantity" class="text-danger"></span> <br>
+    <label for="Quantity">Quantidade: </label> <br>
+    <input type="number" asp-for="Quantity" value="@Model.Quantity"> <br>
+    <span asp-validation-for="Quantity" class="text-danger"></span> <br>
 
-        <input class="btn btn-success mt-2" type="hidden" name="StoreId" value="@Model.StoreId"> <br>
+    <input class="btn btn-success mt-2" type="hidden" name="StoreId" value="@Model.StoreId"> <br>
 
     <button class="btn btn-success mt-2" type="submit">Salvar</button>
 </form>

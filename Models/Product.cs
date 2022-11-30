@@ -27,7 +27,7 @@ public class Product
     [ForeignKey("Store")]
     [Required]
     public int StoreId { get; set; }
-    
+
     public Store Store { get; set; }
 
     public Product() { }

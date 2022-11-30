@@ -7,18 +7,18 @@ public class ProductController : Controller
 {
     private readonly ProjContext _context;
 
-    public ProductController(ProjContext context) 
+    public ProductController(ProjContext context)
     {
         _context = context;
     }
 
     public IActionResult Index() => View(_context.Products);
-    
+
     public IActionResult Delete(int id)
     {
         Product product = _context.Products.Find(id);
 
-        if(product == null)
+        if (product == null)
         {
             return NotFound();
         }
@@ -32,7 +32,7 @@ public class ProductController : Controller
     {
         ViewBag.lojaId = store.Id;
         return View();
-    }  
+    }
 
     [HttpPost]
     public IActionResult Create([FromForm] Product product)
@@ -43,7 +43,7 @@ public class ProductController : Controller
             return View(product);
         }
 
-        if (_context.Products.Find(product.Id) != null) 
+        if (_context.Products.Find(product.Id) != null)
         {
             throw new Exception("Já existe um produto com esse Id");
         }
@@ -88,10 +88,11 @@ public class ProductController : Controller
     }
 
 
-    public IActionResult Show(int id) {
-    Product product = _context.Products.Find(id);
+    public IActionResult Show(int id)
+    {
+        Product product = _context.Products.Find(id);
 
-        if(product == null)
+        if (product == null)
         {
             return NotFound();
         }

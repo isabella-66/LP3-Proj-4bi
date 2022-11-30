@@ -7,18 +7,19 @@ public class StoreController : Controller
 {
     private readonly ProjContext _context;
 
-    public StoreController(ProjContext context) 
+    public StoreController(ProjContext context)
     {
         _context = context;
     }
 
     public IActionResult Index() => View(_context.Stores);
 
-    public IActionResult Show(int id) {
-    Store store = _context.Stores.Find(id);
-    ViewBag.products = _context.Products.Where(x => x.StoreId == id).ToList();
+    public IActionResult Show(int id)
+    {
+        Store store = _context.Stores.Find(id);
+        ViewBag.products = _context.Products.Where(x => x.StoreId == id).ToList();
 
-        if(store == null)
+        if (store == null)
         {
             return NotFound();
         }
@@ -30,30 +31,30 @@ public class StoreController : Controller
     {
         Store store = _context.Stores.Find(id);
 
-        if(store == null)
+        if (store == null)
         {
             return NotFound();
         }
 
         try
         {
-        _context.Stores.Remove(store);
-        _context.SaveChanges();
+            _context.Stores.Remove(store);
+            _context.SaveChanges();
         }
 
         catch (Exception ex)
         {
-        throw new Exception("Não é possível apagar uma loja que tenha produtos registrados");
+            throw new Exception("Não é possível apagar uma loja que tenha produtos registrados");
         }
 
         return RedirectToAction(nameof(Index));
     }
-    
+
 
     public IActionResult Create()
     {
         return View();
-    }  
+    }
 
     [HttpPost]
     public IActionResult Create([FromForm] Store store)
@@ -64,7 +65,7 @@ public class StoreController : Controller
             return View(store);
         }
 
-        if (_context.Stores.Find(store.Id) != null) 
+        if (_context.Stores.Find(store.Id) != null)
         {
             throw new Exception("Já existe uma loja com esse Id");
         }
